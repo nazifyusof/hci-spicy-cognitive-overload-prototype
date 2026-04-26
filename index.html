@@ -1638,10 +1638,10 @@
         <div style="background:#d4edda;border:1px solid #c3e6cb;color:#155724;padding:8px;font-size:12px;font-weight:bold;text-align:center;margin-bottom:8px;">
           ✓ Deal agreed at ${currentSellerAmt}
         </div>
-        <button class="btn-pay" onclick="handlePayment()">💳 Proceed to Payment</button>
+        <button class="btn-pay" onclick="handlePayment()">📅 Proceed to Schedule Meetup</button>
         <p style="font-size:11px;color:#888;text-align:center;margin-top:6px;">You'll be directed to a secure checkout. Coordinate meetup after payment.</p>
       `);
-                toast('Deal accepted! Proceed to payment when ready.');
+                toast('Deal accepted! Proceed to schedule meetup when ready.');
                 openChat();
 
             } else if (type === 'decline') {
@@ -1772,8 +1772,8 @@
           <div style="background:#d4edda;border:1px solid #c3e6cb;color:#155724;padding:8px;font-size:12px;font-weight:bold;text-align:center;margin-bottom:8px;">
             ✓ Seller accepted at ${buyerLastOffer}
           </div>
-          <button class="btn-pay" onclick="handlePayment()">💳 Proceed to Payment</button>
-          <p style="font-size:11px;color:#888;text-align:center;margin-top:6px;">You'll be directed to a secure checkout.</p>
+          <button class="btn-pay" onclick="handlePayment()">📅 Proceed to Schedule Meetup</button>
+<!--          <p style="font-size:11px;color:#888;text-align:center;margin-top:6px;">You'll be directed to a secure checkout.</p>-->
         `);
                     toast('Seller accepted your offer!');
 
@@ -1881,6 +1881,8 @@
             } else {
                 d.innerHTML = `<div class="msg-bub">${esc(text)}</div>`;
             }
+            document.getElementById('chatMessages').appendChild(d);
+            scrollChat();
             document.getElementById('chatMessages').appendChild(d);
             scrollChat();
         }
@@ -2037,5 +2039,4 @@
     </div>
 
 </body>
-
 </html>
